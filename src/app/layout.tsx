@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
+import { themeConfig } from '@/theme/themeConfig';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const themeConfig = {
-    token: {
-      // Seed Token
-      colorPrimary: '#00b96b',
-    },
-  };
+
   
   return (
     <html lang="en">
