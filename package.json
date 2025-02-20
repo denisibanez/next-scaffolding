@@ -5,10 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:css": "tailwindcss -m -i ./src/app/globals.css -o ./dist/styles.css",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "concurrently 'npm run storybook:css' 'storybook dev -p 6006'",
+    "storybook:css": "tailwindcss -w -i ./src/app/globals.css -o ./src/index.css",
+    "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
+    "build-storybook:css": "tailwindcss -m -i ./src/app/globals.css -o ./src/index.css"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
@@ -18,16 +23,32 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
     "@eslint/eslintrc": "^3",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/addon-onboarding": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/nextjs": "^8.5.8",
+    "@storybook/react": "^8.5.8",
+    "@storybook/test": "^8.5.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
+    "eslint-plugin-storybook": "^0.11.3",
     "husky": "^9.1.7",
     "postcss": "^8",
     "prettier": "3.5.1",
+    "storybook": "^8.5.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
+    ]
   }
 }
