@@ -1,8 +1,7 @@
+'use client';
 
-'use client'
-
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import Image, { StaticImageData } from 'next/image';
 
@@ -23,40 +22,41 @@ export default function LocaleSwitcher() {
     {
       name: 'Português',
       code: 'pt',
-      flag: ptImage
+      flag: ptImage,
     },
     {
       name: 'English',
       code: 'en',
-      flag: enImage
-    }
+      flag: enImage,
+    },
   ]);
 
-
-  const handleSelectLang = async (language : string) => {
+  const handleSelectLang = async (language: string) => {
     setLocale(language);
     document.cookie = `NEXT_LOCALE=${language}; path=/; max-age=31536000; SameSite=Lax`;
     router.refresh();
   };
 
   useEffect(() => {
-    const cookieLocale = document.cookie.split(";").find((c) => c.trim().startsWith("NEXT_LOCALE="))?.split("=")[1];
+    const cookieLocale = document.cookie
+      .split(';')
+      .find((c) => c.trim().startsWith('NEXT_LOCALE='))
+      ?.split('=')[1];
 
-    if(cookieLocale && cookieLocale === locale) {
+    if (cookieLocale && cookieLocale === locale) {
       return;
     }
 
-    if(cookieLocale){
+    if (cookieLocale) {
       setLocale(cookieLocale);
     } else {
       const browserLocale = navigator.language.slice(0, 2);
-      if(browserLocale === locale){
-        return
+      if (browserLocale === locale) {
+        return;
       }
       setLocale(browserLocale);
     }
   }, [router, locale]);
-
 
   return (
     <ul className="p-5 flex gap-3">

@@ -10,8 +10,8 @@ import { ConfigProvider } from 'antd';
 
 import themeConfig from '@/theme/themeConfig';
 
-import {NextIntlClientProvider} from 'next-intl';
-import { getMessages} from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 import HeaderComponent from '@/components/shared/HeaderComponent/HeaderComponent';
 
@@ -35,9 +35,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
-
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -54,10 +51,9 @@ export default async function RootLayout({
               <AntdRegistry>
                 <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>
               </AntdRegistry>
-              </NextIntlClientProvider>
-              </div>
-          </section>
-
+            </NextIntlClientProvider>
+          </div>
+        </section>
       </body>
     </html>
   );
