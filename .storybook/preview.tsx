@@ -8,8 +8,11 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <AntdRegistry>
-          <ConfigProvider theme={themeConfig}> <Story /></ConfigProvider>
-        </AntdRegistry>
+        <ConfigProvider theme={themeConfig}>
+          {' '}
+          <Story />
+        </ConfigProvider>
+      </AntdRegistry>
     ),
   ],
 };

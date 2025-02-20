@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Button } from 'antd';
 
-
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
@@ -24,9 +23,5 @@ export const ButtonComponent = ({
   label,
   ...props
 }: ButtonProps) => {
-  return (
-
-    <Button type="primary" >Button</Button>
-
-  );
+  return <Button type="primary">Button</Button>;
 };
