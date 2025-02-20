@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 interface StoreExampleInterface {
   count: number;
@@ -8,6 +8,6 @@ interface StoreExampleInterface {
 const useStore = create<StoreExampleInterface>((set) => ({
   count: 1,
   inc: () => set((state) => ({ count: state.count + 1 })),
-}))
+}));
 
-export { useStore }
+export { useStore };

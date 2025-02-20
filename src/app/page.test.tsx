@@ -1,14 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import Page from '@/app/page';
+import { NextIntlClientProvider } from 'next-intl';
+import messages from '@/i18n/messages/en';
+
+const locale = 'en';
+
 
 describe('Page Component', () => {
   it('renders without crashing', () => {
-    render(<Page />);
+    render(
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <Page />
+      </NextIntlClientProvider>,
+    );
   });
 
   it('displays a button', () => {
-    render(<Page />);
+
+
+    render(
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <Page />
+      </NextIntlClientProvider>,
+    );
+
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
+
   });
 });
