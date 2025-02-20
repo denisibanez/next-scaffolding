@@ -1,6 +1,4 @@
-*,
-::before,
-::after {
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -154,11 +152,9 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-  tab-size: 4;
+     tab-size: 4;
   /* 3 */
-  font-family:
-    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -201,7 +197,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -247,9 +243,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-feature-settings: normal;
   /* 2 */
@@ -492,8 +486,7 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -513,7 +506,7 @@ Set the default cursor for buttons.
 */
 
 button,
-[role='button'] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -557,12 +550,50 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden]:where(:not([hidden='until-found'])) {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
-.row-start-2 {
-  grid-row-start: 2;
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.row-start-7 {
+  grid-row-start: 7;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .flex {
@@ -577,58 +608,70 @@ video {
   display: contents;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.h-16 {
+  height: 4rem;
 }
 
-.grid-rows-\[20px_1fr_20px\] {
-  grid-template-rows: 20px 1fr 20px;
+.min-h-20 {
+  min-height: 5rem;
 }
 
-.flex-col {
-  flex-direction: column;
+.w-full {
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .items-center {
   align-items: center;
 }
 
-.justify-items-center {
-  justify-items: center;
+.justify-end {
+  justify-content: flex-end;
 }
 
-.gap-16 {
-  gap: 4rem;
+.justify-between {
+  justify-content: space-between;
 }
 
-.gap-8 {
-  gap: 2rem;
+.gap-20 {
+  gap: 5rem;
 }
 
-.bg-blue-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 64 175 / var(--tw-bg-opacity, 1));
+.gap-3 {
+  gap: 0.75rem;
 }
 
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity, 1));
+.gap-6 {
+  gap: 1.5rem;
 }
 
-.p-10 {
-  padding: 2.5rem;
+.gap-y-16 {
+  row-gap: 4rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
-.pb-20 {
-  padding-bottom: 5rem;
+.p-5 {
+  padding: 1.25rem;
 }
 
 .font-\[family-name\:var\(--font-geist-sans\)\] {
   font-family: var(--font-geist-sans);
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .antialiased {
@@ -638,14 +681,6 @@ video {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-@media (min-width: 640px) {
-  .sm\:items-start {
-    align-items: flex-start;
-  }
-
-  .sm\:p-20 {
-    padding: 5rem;
-  }
+  background: #000e24;
+  color: #ffffff;
 }

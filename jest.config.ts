@@ -13,7 +13,7 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '^next$': require.resolve('next'),
-    '^next/navigation$': require.resolve('next/navigation')
+    '^next/navigation$': require.resolve('next/navigation'),
   },
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
