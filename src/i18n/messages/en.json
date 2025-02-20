@@ -1,0 +1,13 @@
+{
+  "Home": {
+    "title": "NextJS i18n Tutorial",
+    "description": "Tutorial of how to manipulate i18n based on route path or domain with  Nextjs v15",
+    "Texts": {
+      "count": "Count"
+    },
+    "Buttons": {
+      "increment": "Increment"
+    }
+  }
+
+}
