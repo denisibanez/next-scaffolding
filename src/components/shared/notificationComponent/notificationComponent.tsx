@@ -1,27 +1,22 @@
 import React from 'react';
 import { useEffect } from 'react';
-import {  notification } from 'antd';
+import { notification } from 'antd';
 
 import { useNotificationStore } from '@/store/notification/notification.store';
 
 import { NotificationType } from '@/types/notification';
 
-export default function NotificationComponent () {
+export default function NotificationComponent() {
   const [api, contextHolder] = notification.useNotification();
   const { notificationState } = useNotificationStore();
 
   useEffect(() => {
-    const {
-      model,
-      message,
-      type,
-      description,
-    } = notificationState;
+    const { model, message, type, description } = notificationState;
 
     const openNotificationWithIcon = (kind: NotificationType) => {
       api[kind]({
         message,
-        description
+        description,
       });
     };
 
@@ -45,9 +40,5 @@ export default function NotificationComponent () {
     }
   }, [notificationState, api]);
 
-  return (
-    <>
-      {contextHolder}
-    </>
-  );
+  return <>{contextHolder}</>;
 }

@@ -41,29 +41,31 @@ export default function Home() {
         type: 'get',
         url: mountUrl(urlParams),
       };
-  
-      await dynamicService(requestParams).then((response: unknown) => {
-        const data = response;
-        if (data) {
-          console.log(data);
-        }
-        setNotification({
-          model:true,
-          message: t('Feedback.success'),
-          type: 'success',
-        });
-      }).catch(() => {
-        setNotification({
-          model: true,
-          message: t('Feedback.error'),
-          type: 'error',
+
+      await dynamicService(requestParams)
+        .then((response: unknown) => {
+          const data = response;
+          if (data) {
+            console.log(data);
+          }
+          setNotification({
+            model: true,
+            message: t('Feedback.success'),
+            type: 'success',
+          });
         })
-      }).finally(() => {
-        setLoading(false);
-      } );
-  
+        .catch(() => {
+          setNotification({
+            model: true,
+            message: t('Feedback.error'),
+            type: 'error',
+          });
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     };
-  
+
     getExample();
   }, []);
 

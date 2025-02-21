@@ -28,7 +28,7 @@ export default function HeaderComponent() {
       {pathname !== '/auth' && (
         <div className="flex justify-between h-16 items-center w-full">
           <Link href="/" className="cursor-pointer">
-            <Image src={Logo} alt="Next.js Logo" width={60} height={60}  />
+            <Image src={Logo} alt="Next.js Logo" width={60} height={60} />
           </Link>
 
           <div className="flex items-center">

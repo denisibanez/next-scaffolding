@@ -15,7 +15,7 @@ export default function ViewWrapper({
   const { loading } = useLoadingStore();
 
   return (
-    <div className="grid  gap-y-8 font-[family-name:var(--font-geist-sans)]" >
+    <div className="grid  gap-y-8 font-[family-name:var(--font-geist-sans)]">
       <div className={!!loading ? ' hidden' : ''}>
         <HeaderComponent />
         <div className="h-[calc(100vh-6rem)] flex items-center">{children}</div>
