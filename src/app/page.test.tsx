@@ -5,6 +5,10 @@ import messages from '@/i18n/messages/en';
 
 const locale = 'en';
 
+jest.mock('next-auth/react', () => ({
+  useSession: jest.fn(() => ({ status: 'authenticated' })),
+}));
+
 describe('Page Component', () => {
   it('renders without crashing', () => {
     render(

@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 
 import { Button } from 'antd';
 import { useStore } from '@/store/example/example.store';
+import { useLoadingStore } from '@/store/loading/loading.store';
 
 import dynamicService from '@/services/plugins/dynamicInjection.service';
 import mountUrl from '@/utils/mountParams.utils';
@@ -18,12 +19,14 @@ import { RequestParams } from '@/types/request';
 
 export default function Home() {
   const { status } = useSession();
+
   const unauthenticated = status === 'unauthenticated';
   if (unauthenticated) {
     redirect('/auth');
   }
 
   const { count, inc } = useStore();
+  const { setLoading } = useLoadingStore();
   const t = useTranslations('Home');
 
   const getExample = async () => {
@@ -48,9 +51,14 @@ export default function Home() {
     getExample();
   }, []);
 
+  useEffect(() => {
+    setLoading(status === 'loading');
+  }, [status, setLoading]);
+
+
   return (
     <>
-      <main className="flex  gap-20 row-start-7 items-center ">
+      <main className="flex  gap-20 row-start-7 items-center w-full ">
         <section className="grid gap-6  min-h-20 items-center w-full">
           <h1 className="text-4xl font-bold">{t('title')}</h1>
           <p className="text-lg">{t('description')}</p>
