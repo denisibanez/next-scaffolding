@@ -1,4 +1,3 @@
-
 import request from '@/services/plugins/request';
 import { Request } from '@/types/request';
 
@@ -6,7 +5,7 @@ export class ExampleService {
   static getExample(
     success: (res: unknown) => unknown,
     error: (e: unknown) => unknown,
-    done = () => { }
+    done = () => {}
   ) {
     const req: Request = {
       method: 'get',

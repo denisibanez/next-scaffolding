@@ -5,7 +5,7 @@ import { CustomService } from '../index';
 
 export default async function dynamicService(params: RequestParams) {
   if (params.loading) {
-     // dispatch loading
+    // dispatch loading
   }
 
   const response = await CustomService.customServiceMethod(

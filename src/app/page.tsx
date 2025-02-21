@@ -16,7 +16,7 @@ export default function Home() {
   const { count, inc } = useStore();
   const t = useTranslations('Home');
 
-   const getExample = async () => {
+  const getExample = async () => {
     const urlParams = {
       path: `/api/v2/`,
     };
@@ -25,16 +25,14 @@ export default function Home() {
       url: mountUrl(urlParams),
       loading: true,
     };
-  
-    await dynamicService(requestParams).then(
-      (response: unknown) => {
-        const data = response;
-        if (data) {
-          console.log(data)
-        }
+
+    await dynamicService(requestParams).then((response: unknown) => {
+      const data = response;
+      if (data) {
+        console.log(data);
       }
-    );
-  }
+    });
+  };
 
   useEffect(() => {
     getExample();

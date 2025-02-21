@@ -1,4 +1,3 @@
-
 import request from '@/services/plugins/request';
 
 import { RequestParams, Request } from '@/types/request';
@@ -8,9 +7,8 @@ export class CustomService {
     params: RequestParams,
     success: (res: unknown) => unknown,
     error: (e: unknown) => unknown,
-    done = () => { }
+    done = () => {}
   ) {
-
     const req: Request = {
       method: params.type,
       url: `${process.env.NEXT_PUBLIC_API_URL}${params.url}`,
