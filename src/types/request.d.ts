@@ -10,8 +10,6 @@ interface RequestParams {
   type: Methods;
   url: string;
   payload?: unknown;
-  customSuccessMessage?: string | null;
-  customErrorMessage?: string | null;
   headers?: unknown;
 }
 

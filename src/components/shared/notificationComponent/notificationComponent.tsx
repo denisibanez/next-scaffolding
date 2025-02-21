@@ -6,6 +6,13 @@ import { useNotificationStore } from '@/store/notification/notification.store';
 
 import { NotificationType } from '@/types/notification';
 
+enum NotificationTypes {
+  success = 'success',
+  info = 'info',
+  warning = 'warning',
+  error = 'error',
+}
+
 export default function NotificationComponent() {
   const [api, contextHolder] = notification.useNotification();
   const { notificationState } = useNotificationStore();
@@ -22,20 +29,7 @@ export default function NotificationComponent() {
 
     if (model) {
       let localType: NotificationType = 'info';
-      switch (type) {
-        case 'success':
-          localType = 'success';
-          break;
-        case 'info':
-          localType = 'info';
-          break;
-        case 'warning':
-          localType = 'warning';
-          break;
-        case 'error':
-          localType = 'error';
-          break;
-      }
+      localType = NotificationTypes[type as keyof typeof NotificationTypes] || 'info';
       openNotificationWithIcon(localType);
     }
   }, [notificationState, api]);
