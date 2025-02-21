@@ -29,7 +29,8 @@ export default function NotificationComponent() {
 
     if (model) {
       let localType: NotificationType = 'info';
-      localType = NotificationTypes[type as keyof typeof NotificationTypes] || 'info';
+      localType =
+        NotificationTypes[type as keyof typeof NotificationTypes] || 'info';
       openNotificationWithIcon(localType);
     }
   }, [notificationState, api]);

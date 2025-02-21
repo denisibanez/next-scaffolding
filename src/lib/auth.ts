@@ -2,6 +2,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import GoogleProvider from 'next-auth/providers/google';
 import { AuthOptions } from 'next-auth';
 import prismaClient from './prisma';
+import { JWT } from 'next-auth/jwt';
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prismaClient),
@@ -17,7 +18,7 @@ export const authOptions: AuthOptions = {
         id: string;
         name: string;
         email: string;
-        token: string;
+        token: JWT;
       };
 
       return session;
