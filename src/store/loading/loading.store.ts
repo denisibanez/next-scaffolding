@@ -6,10 +6,8 @@ interface StoreLoadingInterface {
 }
 
 const useLoadingStore = create<StoreLoadingInterface>((set) => ({
-  loading: false,
-  setLoading: (payload: boolean) => {
-    set({ loading: payload });
-  },
+  loading: true,
+  setLoading: (payload: boolean) => set({ loading: payload }),
 }));
 
 export { useLoadingStore };

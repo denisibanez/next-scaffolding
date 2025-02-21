@@ -8,6 +8,15 @@
     },
     "Buttons": {
       "increment": "Increment"
+    },
+    "Feedback": {
+      "success": "The request was successful",
+      "error": "An error occurred while making the request"
     }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist",
+    "backButton": "Back to home page"
   }
 }

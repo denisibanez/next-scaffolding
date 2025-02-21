@@ -11,6 +11,7 @@ import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import LocaleSwitcher from '@/components/shared/localeSwitcher/localeSwitcher';
 import Image from 'next/image';
 import Logo from '@/assets/images/banner/next.png';
+import Link from 'next/link';
 
 export default function HeaderComponent() {
   const { data: session } = useSession();
@@ -26,7 +27,9 @@ export default function HeaderComponent() {
     <>
       {pathname !== '/auth' && (
         <div className="flex justify-between h-16 items-center w-full">
-          <Image src={Logo} alt="Next.js Logo" width={60} height={60} />
+          <Link href="/" className="cursor-pointer">
+            <Image src={Logo} alt="Next.js Logo" width={60} height={60}  />
+          </Link>
 
           <div className="flex items-center">
             <Avatar

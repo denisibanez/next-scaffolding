@@ -51,11 +51,7 @@ export default async function RootLayout({
             <AntdRegistry>
               <ConfigProvider theme={themeConfig}>
                 <section className="container m-auto min-h-svh">
-
-                    <ViewWrapper>
-                      {children}
-                    </ViewWrapper>
-
+                  <ViewWrapper>{children}</ViewWrapper>
                 </section>
               </ConfigProvider>
             </AntdRegistry>
