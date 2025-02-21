@@ -1,13 +1,44 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { Button } from 'antd';
 import { useStore } from '@/store/example/example.store';
 
 import { useTranslations } from 'next-intl';
 
+import dynamicService from '@/services/plugins/dynamicInjection.service';
+import mountUrl from '@/utils/mountParams.utils';
+
+import { RequestParams } from '@/types/request';
+
 export default function Home() {
   const { count, inc } = useStore();
   const t = useTranslations('Home');
+
+   const getExample = async () => {
+    const urlParams = {
+      path: `/api/v2/`,
+    };
+    const requestParams: RequestParams = {
+      type: 'get',
+      url: mountUrl(urlParams),
+      loading: true,
+    };
+  
+    await dynamicService(requestParams).then(
+      (response: unknown) => {
+        const data = response;
+        if (data) {
+          console.log(data)
+        }
+      }
+    );
+  }
+
+  useEffect(() => {
+    getExample();
+  }, []);
 
   return (
     <>
