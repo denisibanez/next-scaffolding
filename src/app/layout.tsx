@@ -10,7 +10,7 @@ import { ConfigProvider } from 'antd';
 
 import themeConfig from '@/theme/themeConfig';
 
-import { AuthProvider } from '@/providers/auth'
+import { AuthProvider } from '@/providers/auth';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -46,22 +46,20 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       
-          <AuthProvider>
-            <NextIntlClientProvider messages={messages}>
-              <AntdRegistry>
-                <ConfigProvider theme={themeConfig}>
+        <AuthProvider>
+          <NextIntlClientProvider messages={messages}>
+            <AntdRegistry>
+              <ConfigProvider theme={themeConfig}>
                 <section className="container m-auto min-h-[calc(100vh - 30px)]">
-                <div className="grid  gap-y-16 font-[family-name:var(--font-geist-sans)]">
-                  <HeaderComponent />
-                  {children}
+                  <div className="grid  gap-y-16 font-[family-name:var(--font-geist-sans)]">
+                    <HeaderComponent />
+                    {children}
                   </div>
-                  </section>
-                </ConfigProvider>
-              </AntdRegistry>
-            </NextIntlClientProvider>
-          </AuthProvider>
-
+                </section>
+              </ConfigProvider>
+            </AntdRegistry>
+          </NextIntlClientProvider>
+        </AuthProvider>
       </body>
     </html>
   );
