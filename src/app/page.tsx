@@ -2,10 +2,16 @@
 
 import { useEffect } from 'react';
 
+import {  useSession } from 'next-auth/react'
+
+import { redirect } from 'next/navigation';
+
+import { useTranslations } from 'next-intl';
+
 import { Button } from 'antd';
 import { useStore } from '@/store/example/example.store';
 
-import { useTranslations } from 'next-intl';
+
 
 import dynamicService from '@/services/plugins/dynamicInjection.service';
 import mountUrl from '@/utils/mountParams.utils';
@@ -13,6 +19,12 @@ import mountUrl from '@/utils/mountParams.utils';
 import { RequestParams } from '@/types/request';
 
 export default function Home() {
+  const { status } = useSession();
+  const unauthenticated = status === "unauthenticated";
+  if(unauthenticated) {
+    redirect("/auth");
+  }
+
   const { count, inc } = useStore();
   const t = useTranslations('Home');
 

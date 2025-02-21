@@ -10,10 +10,12 @@ import { ConfigProvider } from 'antd';
 
 import themeConfig from '@/theme/themeConfig';
 
+import { AuthProvider } from '@/providers/auth'
+
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-import HeaderComponent from '@/components/shared/HeaderComponent/HeaderComponent';
+import HeaderComponent from '@/components/shared/headerComponent/headerComponent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,20 +42,26 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <section className="container m-auto min-h-[calc(100vh - 30px)]">
-          <div className="grid  gap-y-16 font-[family-name:var(--font-geist-sans)]">
+       
+          <AuthProvider>
             <NextIntlClientProvider messages={messages}>
-              <HeaderComponent />
               <AntdRegistry>
-                <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>
+                <ConfigProvider theme={themeConfig}>
+                <section className="container m-auto min-h-[calc(100vh - 30px)]">
+                <div className="grid  gap-y-16 font-[family-name:var(--font-geist-sans)]">
+                  <HeaderComponent />
+                  {children}
+                  </div>
+                  </section>
+                </ConfigProvider>
               </AntdRegistry>
             </NextIntlClientProvider>
-          </div>
-        </section>
+          </AuthProvider>
+
       </body>
     </html>
   );

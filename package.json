@@ -14,15 +14,22 @@
     "storybook:css": "tailwindcss -w -i ./src/app/globals.css -o ./src/index.css",
     "build-storybook": "concurrently 'npm run build-storybook:css' 'storybook build'",
     "build-storybook:css": "tailwindcss -m -i ./src/app/globals.css -o ./src/index.css",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@auth/prisma-adapter": "^2.7.4",
     "antd": "^5.24.1",
     "axios": "^1.7.9",
     "concurrently": "^9.1.2",
+    "mongodb": "^6.13.1",
     "next": "15.1.7",
+    "next-auth": "^4.24.11",
     "next-intl": "^3.26.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -3,7 +3,8 @@
     "title": "Tutorial de i18n com NextJS",
     "description": "Tutorial de como manipular i18n baseado no caminho da rota ou domínio com Nextjs v15",
     "Texts": {
-      "count": "Contador"
+      "count": "Contador",
+      "welcome": "Bem-vindo"
     },
     "Buttons": {
       "increment": "Incrementar"
