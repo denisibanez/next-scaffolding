@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { notification } from 'antd';
 
-import { useNotificationStore } from '@/store/notification/notification.store';
+import { useNotificationStore } from '../../../store/notification/notification.store';
 
-import { NotificationType } from '@/types/notification';
+import { NotificationType } from '../../../types/notification';
 
 enum NotificationTypes {
   success = 'success',

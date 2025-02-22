@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Page from '@/app/home';
+import Page from '../app/home';
 import { NextIntlClientProvider } from 'next-intl';
-import messages from '@/i18n/messages/en';
+import messages from '../i18n/messages/en.json';
 
 const locale = 'en';
 

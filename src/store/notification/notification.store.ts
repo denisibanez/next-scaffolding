@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { NotificationType } from '@/types/notification';
+import { NotificationType } from '../../types/notification';
 
 interface StoreNotificationInterface {
   notificationState: {

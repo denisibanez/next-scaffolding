@@ -1,4 +1,4 @@
-import { RequestParams } from '@/types/request';
+import { RequestParams } from '../../types/request';
 
 // SERVICE
 import { CustomService } from '../index';

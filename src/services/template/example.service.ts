@@ -1,5 +1,5 @@
-import request from '@/services/plugins/request';
-import { Request } from '@/types/request';
+import request from '../../services/plugins/request';
+import { Request } from '../../types/request';
 
 export class ExampleService {
   static getExample(
