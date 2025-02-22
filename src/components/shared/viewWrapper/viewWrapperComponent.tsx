@@ -4,7 +4,7 @@ import { useLoadingStore } from '@/store/loading/loading.store';
 
 import { Spin } from 'antd';
 
-import HeaderComponent from '@/components/shared/headerComponent/headerComponent';
+import HeaderComponent from '@/components/shared/headerComponent/headerWrapperComponent';
 import NotificationComponent from '@/components/shared/notificationComponent/notificationComponent';
 
 export default function ViewWrapper({
