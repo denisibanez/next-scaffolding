@@ -1,4 +1,3 @@
-
 import HomeView from '@/app/views/home/page';
 
 import dynamicService from '@/services/plugins/dynamicInjection.service';
@@ -19,16 +18,13 @@ const getExample = async () => {
     url: mountUrl(urlParams),
   };
 
-  const response = await dynamicService(requestParams)
-  return (response as { data: { results: GetExampleResponse[] } })?.data?.results;
-} 
+  const response = await dynamicService(requestParams);
+  return (response as { data: { results: GetExampleResponse[] } })?.data
+    ?.results;
+};
 
 export default async function HomePage() {
-
-
   const resultResponse = await getExample();
 
-  return (
-    <HomeView items={resultResponse} />
-  );
+  return <HomeView items={resultResponse} />;
 }

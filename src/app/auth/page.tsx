@@ -10,7 +10,7 @@ import { useLoadingStore } from '@/store/loading/loading.store';
 export default function AuthView() {
   const { status } = useSession();
   const { setLoading } = useLoadingStore();
-  
+
   const authenticated = status === 'authenticated';
 
   if (authenticated) {
