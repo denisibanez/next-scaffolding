@@ -16,6 +16,10 @@ import { RequestParams } from '@/types/request';
 interface HomeViewProps {
   items: { name: string; url: string }[];
 }
+interface ResponseInterface {
+  data: { results: { name: string; url: string }[] };
+  message?: string;
+}
 
 export default function HomeView({ items }: HomeViewProps) {
   const { status } = useSession();
@@ -48,22 +52,22 @@ export default function HomeView({ items }: HomeViewProps) {
 
     dynamicService(requestParams)
       .then((response: unknown) => {
-        const data = response?.data;
-        if (data) {
-          console.log(data);
-
+        const value = (response as ResponseInterface)?.data;
+        if (value) {
+          console.log(value);
+    
           setNotification({
             model: true,
             message: t('Feedback.success'),
             type: 'success',
           });
-
+    
           return;
         }
-
+    
         setNotification({
           model: true,
-          message: data?.message || t('Feedback.error'),
+          message: (response as ResponseInterface)?.message || t('Feedback.error'),
           type: 'error',
         });
       })

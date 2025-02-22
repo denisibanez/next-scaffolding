@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Page from '@/app/views/home/page';
+import Page from '@/app/home';
 import { NextIntlClientProvider } from 'next-intl';
 import messages from '@/i18n/messages/en';
 

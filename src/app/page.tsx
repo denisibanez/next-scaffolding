@@ -1,4 +1,4 @@
-import HomeView from '@/app/views/home/page';
+import HomeView from '@/app/home';
 
 import dynamicService from '@/services/plugins/dynamicInjection.service';
 import mountUrl from '@/utils/mountParams.utils';
