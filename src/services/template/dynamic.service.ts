@@ -1,6 +1,6 @@
-import request from '@/services/plugins/request';
+import request from '../../services/plugins/request';
 
-import { RequestParams, Request } from '@/types/request';
+import { RequestParams, Request } from '../../types/request';
 
 export class CustomService {
   static customServiceMethod(

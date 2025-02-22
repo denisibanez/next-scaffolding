@@ -5,10 +5,10 @@ import { useEffect } from 'react';
 import { redirect } from 'next/navigation';
 
 import { Button } from 'antd';
-import NotFoundImage from '@/assets/images/banner/not-found.svg';
+import NotFoundImage from '../assets/images/banner/not-found-image.svg';
 import Image from 'next/image';
 
-import { useLoadingStore } from '@/store/loading/loading.store';
+import { useLoadingStore } from '../store/loading/loading.store';
 import { useTranslations } from 'next-intl';
 
 export default function NotFound() {

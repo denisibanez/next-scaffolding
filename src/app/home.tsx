@@ -3,15 +3,15 @@
 import { useTranslations } from 'next-intl';
 
 import { Button, Form } from 'antd';
-import { useStore } from '@/store/example/example.store';
-import { useLoadingStore } from '@/store/loading/loading.store';
-import { useNotificationStore } from '@/store/notification/notification.store';
+import { useStore } from '../store/example/example.store';
+import { useLoadingStore } from '../store/loading/loading.store';
+import { useNotificationStore } from '../store/notification/notification.store';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { redirect } from 'next/navigation';
-import dynamicService from '@/services/plugins/dynamicInjection.service';
-import mountUrl from '@/utils/mountParams.utils';
-import { RequestParams } from '@/types/request';
+import dynamicService from '../services/plugins/dynamicInjection.service';
+import mountUrl from '../utils/mountParams.utils';
+import { RequestParams } from '../types/request';
 
 interface HomeViewProps {
   items: { name: string; url: string }[];

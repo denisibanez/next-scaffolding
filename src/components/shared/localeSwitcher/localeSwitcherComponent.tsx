@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 import Image, { StaticImageData } from 'next/image';
 
-import ptImage from '@/assets/images/locale/br.png';
-import enImage from '@/assets/images/locale/en.png';
+import ptImage from '../../../assets/images/locale/br.png';
+import enImage from '../../../assets/images/locale/en.png';
 
 interface LanguagesOptionsInterface {
   name: string;
