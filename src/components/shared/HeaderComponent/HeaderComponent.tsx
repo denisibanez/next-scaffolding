@@ -20,14 +20,15 @@ export default function HeaderComponent() {
 
   async function handleLogout() {
     await signOut();
+    debugger;
     redirect('/auth');
   }
 
   return (
     <>
       {pathname !== '/auth' && (
-        <div className="flex justify-between h-16 items-center w-full">
-          <Link href="/" className="cursor-pointer">
+        <div className="flex flex-col justify-between h-16 items-center w-full md:flex-row">
+          <Link href="/" className="cursor-pointer mt-4 md:mt-0">
             <Image src={Logo} alt="Next.js Logo" width={60} height={60} />
           </Link>
 

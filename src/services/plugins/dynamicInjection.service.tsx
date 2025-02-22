@@ -11,6 +11,7 @@ export default async function DynamicService(params: RequestParams) {
     },
     (e: unknown) => {
       console.log(e, 'ERROR');
+      return e;
     },
     () => {}
   );

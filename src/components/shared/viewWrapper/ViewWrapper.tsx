@@ -18,7 +18,7 @@ export default function ViewWrapper({
     <div className="grid  gap-y-8 font-[family-name:var(--font-geist-sans)]">
       <div className={!!loading ? ' hidden' : ''}>
         <HeaderComponent />
-        <div className="h-[calc(100vh-6rem)] flex items-center">{children}</div>
+        <div className="h-full min-h-[calc(100vh-6rem)] flex-col justify-center flex">{children}</div>
       </div>
 
       <div
