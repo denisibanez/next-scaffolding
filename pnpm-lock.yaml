@@ -43,6 +43,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      tailwindcss:
+        specifier: ^3.4.17
+        version: 3.4.17(ts-node@10.9.2(@types/node@20.17.19)(typescript@5.7.3))
       zustand:
         specifier: ^5.0.3
         version: 5.0.3(@types/react@19.0.10)(react@19.0.0)
@@ -122,9 +125,6 @@ importers:
       storybook:
         specifier: ^8.5.8
         version: 8.5.8(prettier@3.5.1)
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.17(ts-node@10.9.2(@types/node@20.17.19)(typescript@5.7.3))
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.17.19)(typescript@5.7.3)

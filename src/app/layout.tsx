@@ -15,7 +15,7 @@ import { AuthProvider } from '@/providers/auth';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-import HeaderComponent from '@/components/shared/headerComponent/headerComponent';
+import ViewWrapper from '@/components/shared/viewWrapper/viewWrapperComponent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -50,11 +50,8 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <AntdRegistry>
               <ConfigProvider theme={themeConfig}>
-                <section className="container m-auto min-h-[calc(100vh - 30px)]">
-                  <div className="grid  gap-y-16 font-[family-name:var(--font-geist-sans)]">
-                    <HeaderComponent />
-                    {children}
-                  </div>
+                <section className="container m-auto min-h-svh">
+                  <ViewWrapper>{children}</ViewWrapper>
                 </section>
               </ConfigProvider>
             </AntdRegistry>

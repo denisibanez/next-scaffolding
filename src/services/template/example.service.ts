@@ -9,7 +9,7 @@ export class ExampleService {
   ) {
     const req: Request = {
       method: 'get',
-      url: `${process.env.VITE__BASE_PATH_EXAMPLE}/`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/`,
     };
     return request(req, success, error, done);
   }

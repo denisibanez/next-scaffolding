@@ -8,9 +8,10 @@ import { useTranslations } from 'next-intl';
 import { Button, Avatar } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 
-import LocaleSwitcher from '@/components/shared/localeSwitcher/localeSwitcher';
+import LocaleSwitcher from '@/components/shared/localeSwitcher/localeSwitcherComponent';
 import Image from 'next/image';
 import Logo from '@/assets/images/banner/next.png';
+import Link from 'next/link';
 
 export default function HeaderComponent() {
   const { data: session } = useSession();
@@ -19,14 +20,17 @@ export default function HeaderComponent() {
 
   async function handleLogout() {
     await signOut();
+    debugger;
     redirect('/auth');
   }
 
   return (
     <>
       {pathname !== '/auth' && (
-        <div className="flex justify-between h-16 items-center w-full">
-          <Image src={Logo} alt="Next.js Logo" width={60} height={60} />
+        <div className="flex flex-col justify-between h-16 items-center w-full md:flex-row">
+          <Link href="/" className="cursor-pointer mt-4 md:mt-0">
+            <Image src={Logo} alt="Next.js Logo" width={60} height={60} />
+          </Link>
 
           <div className="flex items-center">
             <Avatar
