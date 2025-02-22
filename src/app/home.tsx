@@ -55,19 +55,20 @@ export default function HomeView({ items }: HomeViewProps) {
         const value = (response as ResponseInterface)?.data;
         if (value) {
           console.log(value);
-    
+
           setNotification({
             model: true,
             message: t('Feedback.success'),
             type: 'success',
           });
-    
+
           return;
         }
-    
+
         setNotification({
           model: true,
-          message: (response as ResponseInterface)?.message || t('Feedback.error'),
+          message:
+            (response as ResponseInterface)?.message || t('Feedback.error'),
           type: 'error',
         });
       })
