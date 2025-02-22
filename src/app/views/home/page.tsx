@@ -13,9 +13,9 @@ import dynamicService from '@/services/plugins/dynamicInjection.service';
 import mountUrl from '@/utils/mountParams.utils';
 import { RequestParams } from '@/types/request';
 
-interface HomeViewProps  {
+interface HomeViewProps {
   items: { name: string; url: string }[];
-};
+}
 
 export default function HomeView({ items }: HomeViewProps) {
   const { status } = useSession();
@@ -106,7 +106,12 @@ export default function HomeView({ items }: HomeViewProps) {
       <section className="flex gap-6  min-h-20 mt-8 flex-col md:flex-row items-center md:items-start">
         <h1>Simulando post examplo</h1>
         <Form onFinish={postExample}>
-          <Button type="primary" size="large" htmlType="submit" data-testid="example-post">
+          <Button
+            type="primary"
+            size="large"
+            htmlType="submit"
+            data-testid="example-post"
+          >
             Post Exemplo
           </Button>
         </Form>

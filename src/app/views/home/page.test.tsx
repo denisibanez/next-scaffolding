@@ -12,7 +12,7 @@ jest.mock('next-auth/react', () => ({
 const items = [
   { name: 'item1', url: 'url1' },
   { name: 'item2', url: 'url2' },
-]
+];
 
 describe('Page Component', () => {
   it('renders without crashing', () => {
