@@ -15,7 +15,7 @@ import { AuthProvider } from '@/providers/auth';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-import ViewWrapper from '@/components/shared/viewWrapper/viewWrapper';
+import ViewWrapper from '@/components/shared/viewWrapper/viewWrapperComponent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
