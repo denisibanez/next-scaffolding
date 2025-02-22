@@ -63,9 +63,7 @@
     "storybook": "^8.5.8",
     "ts-node": "^10.9.2"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended",
