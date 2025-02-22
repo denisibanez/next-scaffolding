@@ -8,14 +8,14 @@ import '@ant-design/v5-patch-for-react-19';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
 
-import themeConfig from '@/theme/themeConfig';
+import themeConfig from '../theme/themeConfig';
 
-import { AuthProvider } from '@/providers/auth';
+import { AuthProvider } from '../providers/auth';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-import ViewWrapper from '@/components/shared/viewWrapper/viewWrapperComponent';
+import ViewWrapper from '../components/shared/viewWrapper/viewWrapperComponent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
