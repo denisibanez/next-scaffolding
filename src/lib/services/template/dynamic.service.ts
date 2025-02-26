@@ -11,10 +11,14 @@ export class CustomService {
   ) {
     const req: Request = {
       method: params.type,
-      url: `${process.env.NEXT_PUBLIC_API_URL}${params.url}`,
+      url: `${params.baseUrl || process.env.NEXT_PUBLIC_API_URL}${params.url}`,
     };
     if (params.payload) {
       req.body = params.payload;
+    }
+
+    if (params.query) {
+      req.params = params.query;
     }
 
     if (params.headers) {

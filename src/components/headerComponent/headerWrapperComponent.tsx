@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
 import { Button, Avatar } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 
-import LocaleSwitcher from '../../../components/shared/localeSwitcher/localeSwitcherComponent';
+import LocaleSwitcher from '../../components/localeSwitcher/localeSwitcherComponent';
 import Image from 'next/image';
-import Logo from '../../../assets/images/banner/next.png';
+import Logo from '../../assets/images/banner/next.png';
 import Link from 'next/link';
 
 export default function HeaderComponent() {

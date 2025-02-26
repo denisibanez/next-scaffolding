@@ -9,6 +9,7 @@ type Request = {
 interface RequestParams {
   type: Methods;
   url: string;
+  baseUrl?: string;
   payload?: unknown;
   headers?: unknown;
 }

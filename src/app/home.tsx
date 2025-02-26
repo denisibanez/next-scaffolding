@@ -3,15 +3,16 @@
 import { useTranslations } from 'next-intl';
 
 import { Button, Form } from 'antd';
-import { useStore } from '../store/example/example.store';
-import { useLoadingStore } from '../store/loading/loading.store';
-import { useNotificationStore } from '../store/notification/notification.store';
+import { useStore } from '../lib/store/example/example.store';
+import { useLoadingStore } from '../lib/store/loading/loading.store';
+import { useNotificationStore } from '../lib/store/notification/notification.store';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { redirect } from 'next/navigation';
-import dynamicService from '../services/plugins/dynamicInjection.service';
+import dynamicService from '../lib/services/plugins/dynamicInjection.service';
 import mountUrl from '../utils/mountParams.utils';
 import { RequestParams } from '../types/request';
+
 
 interface HomeViewProps {
   items: { name: string; url: string }[];
@@ -100,7 +101,7 @@ export default function HomeView({ items }: HomeViewProps) {
 
       <section className="grid gap-6  md:before:min-h-20 mt-16  p-10 md:p-0">
         <h1>Dados Carregados pelo Server</h1>
-        <ul className="flex gap-5 flex-col md:flex-row">
+        <ul className="flex gap-5 flex-col md:flex-row flex-wrap">
           {items &&
             items.map((item: { name: string; url: string }, key: number) => (
               <li key={key}>{item.name}</li>
