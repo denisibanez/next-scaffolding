@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
 import { useTranslations } from 'next-intl';
-
 
 import { useLoadingStore } from '../../lib/store/loading/loading.store';
 import { useNotificationStore } from '../../lib/store/notification/notification.store';
@@ -19,7 +18,7 @@ interface ResponseInterface {
 }
 
 export default function FormExamplePage() {
-  const { status, data:session } = useSession();
+  const { status, data: session } = useSession();
   const unauthenticated = status === 'unauthenticated';
   if (unauthenticated) {
     redirect('/auth');
@@ -32,7 +31,7 @@ export default function FormExamplePage() {
   const [exampleList, setExampleList] = useState([]);
 
   useEffect(() => {
-    if(status === 'authenticated') {
+    if (status === 'authenticated') {
       getExampleUser();
       getExampleByUser();
     }
@@ -44,7 +43,7 @@ export default function FormExamplePage() {
       path: `/api/example?email=${session?.user?.email}`,
     };
     const requestParams: RequestParams = {
-      type: 'get', 
+      type: 'get',
       url: mountUrl(urlParams),
       baseUrl: process.env.NEXT_PUBLIC_API_INTERNAL_URL,
     };
@@ -73,7 +72,7 @@ export default function FormExamplePage() {
       })
       .finally(() => {
         setLoading(false);
-      }); 
+      });
   };
 
   const getExampleByUser = () => {
@@ -82,7 +81,7 @@ export default function FormExamplePage() {
       path: `/api/example/${session?.user?.id}`,
     };
     const requestParams: RequestParams = {
-      type: 'get', 
+      type: 'get',
       url: mountUrl(urlParams),
       baseUrl: process.env.NEXT_PUBLIC_API_INTERNAL_URL,
     };
@@ -111,17 +110,18 @@ export default function FormExamplePage() {
       })
       .finally(() => {
         setLoading(false);
-      }); 
+      });
   };
 
   return (
     <div>
       <h1>List examples:</h1>
-      { exampleList && exampleList.map((example : { name: string, id: string}, index) => (
-        <div key={index}>
-          <p>{example?.name}</p>
+      {exampleList &&
+        exampleList.map((example: { name: string; id: string }, index) => (
+          <div key={index}>
+            <p>{example?.name}</p>
           </div>
-      ))}
+        ))}
     </div>
-  )
+  );
 }

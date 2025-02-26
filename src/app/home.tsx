@@ -13,7 +13,6 @@ import dynamicService from '../lib/services/plugins/dynamicInjection.service';
 import mountUrl from '../utils/mountParams.utils';
 import { RequestParams } from '../types/request';
 
-
 interface HomeViewProps {
   items: { name: string; url: string }[];
 }
