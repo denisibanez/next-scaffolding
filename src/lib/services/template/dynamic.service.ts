@@ -1,6 +1,6 @@
 import request from '../../services/plugins/request';
 
-import { RequestParams, Request } from '../../types/request';
+import { RequestParams, Request } from '../../../types/request';
 
 export class CustomService {
   static customServiceMethod(
@@ -15,10 +15,6 @@ export class CustomService {
     };
     if (params.payload) {
       req.body = params.payload;
-    }
-
-    if (params.query) {
-      req.params = params.query;
     }
 
     if (params.headers) {
