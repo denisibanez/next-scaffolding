@@ -2,10 +2,9 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../../../lib/auth';
 import prismaClient from '../../../../lib/prisma';
-import { NextApiRequest } from 'next';
 
 //67b7e4e09a453a95cbeeab0d
-const GET = async (request: NextApiRequest) => {
+const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url as string);
   const { userId } = Object.fromEntries(searchParams);
 

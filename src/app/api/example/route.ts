@@ -2,9 +2,8 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../../lib/auth';
 import prismaClient from '../../../lib/prisma';
-import { NextApiRequest } from 'next';
 
-const GET = async (request: NextApiRequest) => {
+const GET = async (request: Request) => {
   // This is a simple example to get user data
   const { searchParams } = new URL(request.url as string);
   const { email } = Object.fromEntries(searchParams);
