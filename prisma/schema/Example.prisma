@@ -7,5 +7,5 @@ model Example {
   userId String @db.ObjectId
   User User? @relation(fields: [userId], references: [id])
 
-  @@map("customer")
+  @@map("example")
 }
