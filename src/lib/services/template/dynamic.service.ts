@@ -1,6 +1,6 @@
 import request from '../../services/plugins/request';
 
-import { RequestParams, Request } from '../../types/request';
+import { RequestParams, Request } from '../../../types/request';
 
 export class CustomService {
   static customServiceMethod(
@@ -11,7 +11,7 @@ export class CustomService {
   ) {
     const req: Request = {
       method: params.type,
-      url: `${process.env.NEXT_PUBLIC_API_URL}${params.url}`,
+      url: `${params.baseUrl || process.env.NEXT_PUBLIC_API_URL}${params.url}`,
     };
     if (params.payload) {
       req.body = params.payload;

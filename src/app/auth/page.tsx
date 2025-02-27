@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
 
 import { Button } from 'antd';
-import { useLoadingStore } from '../../store/loading/loading.store';
+import { useLoadingStore } from '../../lib/store/loading/loading.store';
 
 export default function AuthView() {
   const { status } = useSession();

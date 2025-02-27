@@ -1,11 +1,11 @@
 'use client';
 
-import { useLoadingStore } from '../../../store/loading/loading.store';
+import { useLoadingStore } from '../../lib/store/loading/loading.store';
 
 import { Spin } from 'antd';
 
-import HeaderComponent from '../../../components/shared/headerComponent/headerWrapperComponent';
-import NotificationComponent from '../../../components/shared/notificationComponent/notificationComponent';
+import HeaderComponent from '../../components/headerComponent/headerWrapperComponent';
+import NotificationComponent from '../../components/notificationComponent/notificationComponent';
 
 export default function ViewWrapper({
   children,

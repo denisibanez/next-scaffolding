@@ -1,6 +1,6 @@
 import axiosApiInstance from '../../services/interceptor';
 
-import { Request } from '../../types/request';
+import { Request } from '../../../types/request';
 import { AxiosRequestConfig } from 'axios';
 
 const request = async (
