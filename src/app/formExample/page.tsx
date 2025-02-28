@@ -26,7 +26,6 @@ type FieldType = {
   name: string;
 };
 
-
 export default function FormExamplePage() {
   const { status, data: session } = useSession();
   const unauthenticated = status === 'unauthenticated';
@@ -142,12 +141,11 @@ export default function FormExamplePage() {
       payload: {
         name: values.name,
         userId: session?.user?.id,
-      }
+      },
     };
 
     dynamicService(requestParams)
       .then((response: unknown) => {
-      
         if (response) {
           setNotification({
             model: true,
@@ -172,33 +170,33 @@ export default function FormExamplePage() {
         form.resetFields();
       });
   };
-  
-  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+
+  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
+    errorInfo
+  ) => {
     console.log('Failed:', errorInfo);
   };
 
   return (
-
-      <div className="flex gap-8">
-
-        <div className='flex-col w-1/2 justify-center bg-white p-10 rounded-md'>
-            <Divider orientation="left">List examples:</Divider>
+    <div className="flex gap-8">
+      <div className="flex-col w-1/2 justify-center bg-white p-10 rounded-md">
+        <Divider orientation="left">List examples:</Divider>
         <List
-      bordered
-      dataSource={exampleList}
-      renderItem={(example: { name: string; id: string }, index: number) => (
-        <List.Item key={index}>
-          <Typography.Text>{example?.name}</Typography.Text> 
-        </List.Item>
-      )}
-    />
-
+          bordered
+          dataSource={exampleList}
+          renderItem={(
+            example: { name: string; id: string },
+            index: number
+          ) => (
+            <List.Item key={index}>
+              <Typography.Text>{example?.name}</Typography.Text>
+            </List.Item>
+          )}
+        />
       </div>
 
-        <div className="form flex flex-col w-1/2 justify-center">
-          <div className="bg-white p-10 rounded-md">
-
-
+      <div className="form flex flex-col w-1/2 justify-center">
+        <div className="bg-white p-10 rounded-md">
           <Form
             form={form}
             name="basic"
@@ -214,7 +212,9 @@ export default function FormExamplePage() {
             <Form.Item<FieldType>
               label="Name"
               name="name"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[
+                { required: true, message: 'Please input your username!' },
+              ]}
             >
               <Input />
             </Form.Item>
@@ -223,10 +223,9 @@ export default function FormExamplePage() {
                 Submit
               </Button>
             </Form.Item>
-           </Form>
-           </div>
+          </Form>
         </div>
+      </div>
     </div>
-  
   );
 }

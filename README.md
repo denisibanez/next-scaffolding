@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Scaffolding
+
+This is a Next.js scaffolding project that includes various tools and configurations for frontend development with Next.js, React, TypeScript, TailwindCSS, and Storybook.
+
+## Features
+- **Next.js 15** for server-side rendering and static site generation.
+- **React 19** for building interactive user interfaces.
+- **TypeScript** for static typing and improved developer experience.
+- **TailwindCSS** for utility-first CSS styling.
+- **Storybook** for UI component development and testing.
+- **ESLint & Prettier** for code linting and formatting.
+- **Jest & Testing Library** for unit and integration testing.
+- **Husky** for Git hooks to enforce best practices.
+- **Zustand** for state management.
+- **Prisma** as the ORM for database interactions.
+- **Next-Auth** for authentication management.
+- **Axios** for API requests.
+- **Concurrent script execution** for optimized development workflows.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 18)
+- pnpm or yarn
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd next-scaffolding
+   ```
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+
+### Development
+To start the development server:
+```sh
+pnpm run dev
+```
+This runs the Next.js development server at `http://localhost:3000/`.
+
+### Building the Project
+To build the application:
+```sh
+pnpm run build
+```
+This will generate an optimized production build.
+
+### Running Storybook
+To start Storybook for UI component development:
+```sh
+pnpm run storybook
+```
+Storybook will run on `http://localhost:6006/`.
+
+### Testing
+To run tests:
+```sh
+pnpm run test
+```
+To run tests in watch mode:
+```sh
+pnpm run test:watch
+```
+To check test coverage:
+```sh
+pnpm run test:coverage
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prisma
+To generate Prisma client:
+```sh
+pnpm run prisma:generate
+```
+To open Prisma Studio:
+```sh
+pnpm run prisma:studio
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Linting & Formatting
+To lint code:
+```sh
+pnpm run lint
+```
+To format code:
+```sh
+pnpm run format
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Husky
+Husky is installed to manage pre-commit hooks. To set it up:
+```sh
+pnpm run prepare
+```
 
-## Learn More
+## License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
+## Author
+[Your Name]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
